@@ -7,8 +7,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.Random;
-
-//import io.javabrains.Greeting;
+/*klasa do wprowadzenia losowych wartosci do bazy danych 
+celem przetestowania oprogramowania */
 
 
 public class InsertRandomVal {
@@ -20,7 +20,7 @@ public class InsertRandomVal {
 	int iloscTankowanRandom;
 	int zasiegZDb;
 	String dataZDb; //  data pierwszego tankowania  
-	String dataRandom; //  daty kolejnych tankowañ 
+	String dataRandom; //  daty kolejnych tankowaÃ± 
 	String nazwaStacji; 
 	
 	// get i set po koleji !!!!!
@@ -44,7 +44,7 @@ public class InsertRandomVal {
 	}
 
 	public void setNazwyStacji() {
-		String[] nazwyStacji = {"Orlen", "BP", "Lotos", "Shell" , "Circle K", "Amic Energy", "Moya", "Tesco"};  //  8 elementów  od 0 do 7 
+		String[] nazwyStacji = {"Orlen", "BP", "Lotos", "Shell" , "Circle K", "Amic Energy", "Moya", "Tesco"};  //  8 elementÃ³w  od 0 do 7 
 		//  rndomowe warosci dadz
 		Random rn  = new Random();
 		int nrStacji =  rn.ints(0, 7)
