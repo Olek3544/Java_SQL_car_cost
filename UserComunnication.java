@@ -12,12 +12,48 @@ import java.util.List;
 
 //import szaruch.start.program.TableTime;
 abstract class CreateTableName {
+	List<String>  nazwyKolumnSql= new ArrayList<String>(); // hm to jest ten generic 
+	/*add car param  0 , fuel 1 , maintanance 2 , insrance 3*/
+	
 	String tableName;
 	LocalDate ld  = LocalDate.now();
 	String dataPoczatkowa; 
 	String dataKoncowa; 
 	int dayDiff; 
 	String[] twoDates; 
+	
+	public List<String> getNazwyKolumnSql() {
+		return nazwyKolumnSql;
+	}
+	public void setNazwyKolumnSql(/*List<String> nazwyKolumnSql*/) {
+		List<String> nazwyKolumnSql =  new ArrayList<String>();
+		//String[] carparam = {"id", "marka", "model", "pojemnosc", "rodzajPaliwa", "moc"};
+		//nazwyKolumnSql.addAll(carparam);
+		// carparam 
+		nazwyKolumnSql.add("id");
+		nazwyKolumnSql.add("marka");
+		nazwyKolumnSql.add("model");
+		nazwyKolumnSql.add("pojemnosc");
+		nazwyKolumnSql.add("rodzajPaliwa");
+		nazwyKolumnSql.add("moc");
+		// paliwo
+		nazwyKolumnSql.add("carID");
+		nazwyKolumnSql.add("dataTankowania");
+		nazwyKolumnSql.add("nazwaStacji");
+		nazwyKolumnSql.add("iloscLitrow");
+		nazwyKolumnSql.add("wartoscRachunku");
+		nazwyKolumnSql.add("przebieg");
+		//eksploatacja 
+		nazwyKolumnSql.add("dataNaprawy");
+		nazwyKolumnSql.add("nazwaUslugi");
+		nazwyKolumnSql.add("warroscRachunku");
+		// ubezpieczenie 
+		nazwyKolumnSql.add("dataUbezpieczenia");
+		nazwyKolumnSql.add("nazwaUbezp");
+		nazwyKolumnSql.add("wartoscOC");
+		nazwyKolumnSql.add("wartoscAC");
+		this.nazwyKolumnSql = nazwyKolumnSql;
+	}
 	public void setByEnterValus(LocalDate ldt)
 	{
 		String d1 =  "2020-12-05";
@@ -93,7 +129,7 @@ abstract class CreateTableName {
 public class UserComunnication extends  CreateTableName implements WorkSelector {
 	BufferedReader readData = new BufferedReader(new InputStreamReader(System.in));
 	LocalDate ld = LocalDate.now(); 
-	//klasa do po≥πczenia 
+	//klasa do po≈ÇƒÖczenia 
 	JdbcConnection jdbc  = new JdbcConnection(); 
 	//jdbc.getConnection();
 	List<Object> fuelBill = new ArrayList<Object>();
@@ -260,7 +296,7 @@ public class UserComunnication extends  CreateTableName implements WorkSelector 
 		System.out.println("4.  for "+ LocalDate.of(2020, 12, 7)+"   here are the test :)  ");
 		//calculateR(); 
 	}
-	/*CZESC NA POB”R DANYCH */
+	/*CZESC NA POB√ìR DANYCH */
 	public List<Object> getSumAvg() {
 		return sumAvg;
 	}
@@ -341,7 +377,7 @@ interface WorkKeaper {
 	
 }
 interface WorkSelector {
-	//  do obliczania sumy rocznej oraz udza≥Ûw poszczegÛlnych 
+	//  do obliczania sumy rocznej oraz udza≈Ç√≥w poszczeg√≥lnych 
 	// fufnkjce do wprowadzania danych 
 	//public List<Double> getAllWWElem();
 	//public void setAllWWElem(); 
@@ -352,14 +388,14 @@ interface WorkSelector {
 	public List<Object> getFuelBill(); 
 	public void setFuelBill(char znak) throws Exception; 
 	// funkcje do poboru danych paliwo
-	public List<Object> getSumAvg();  //  suma z≥ 	
-	public void setSumAvg(List<Object> sumAvg);  // suma z≥ 
+	public List<Object> getSumAvg();  //  suma z≈Ç 	
+	public void setSumAvg(List<Object> sumAvg);  // suma z≈Ç 
 	public List<Object> getSumAvg(int y1);  // suma litry 
 	public void setSumAvg(List<Object> sumAvg, int y1);  // suma litry 
 	// obliczenia sredniego spalania jest fun ok tylko tabela sie nie zgadza 
-	public double getAvgFuelCons();  // liczymy úredni dla ostatniego zuøytego tankowania  tu liczy zle bo bierze " z podanej úwierzo wartoúci 
+	public double getAvgFuelCons();  // liczymy ≈õredni dla ostatniego zu≈ºytego tankowania  tu liczy zle bo bierze " z podanej ≈õwierzo warto≈õci 
 	public void setAvgFuelCons(int przebieg); 
-//  suam kosztÛw dla eksploatacji i ubezpieczenia  
+//  suam koszt√≥w dla eksploatacji i ubezpieczenia  
 	public List<Object> getSumAvg(int x, int y); //  x==2  y==23  2 main 3 ins
 	public void setSumAvg(List<Object> sumAvg, int x, int y);
 	
