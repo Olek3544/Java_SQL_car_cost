@@ -24,7 +24,7 @@ public class MainClass {
 		ConfigClass cfc = new ConfigClass(); 
 		JdbcConnection jdbc = new JdbcConnection();  // return fun of list 
 		BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Select car c - to config car param :)   ");
+		System.out.println("Select char c - to config car param :)   ");
 		System.out.println("Select car 1,2 ,4  ");
 		System.out.println("Press 0 to see car parameter  ");
 	
@@ -45,7 +45,7 @@ public class MainClass {
 		else if(czn=='1')
 		{
 			justList.clear();
-			System.out.println("1-selected fuel bill   ");
+			System.out.println("1-selected entering fuel bill   ");
 			uc.setFuelBill(czn);
 		justList = uc.getFuelBill();
 		justList.stream().forEach(System.out::println);
@@ -63,14 +63,14 @@ public class MainClass {
 		}
 		else if(czn=='2')
 		{
-			System.out.println("2-selected maintanance cost    ");
+			System.out.println("2-selected entering maintanance cost    ");
 		justList.clear();
 		uc.setMaintnance();
 		justList =  uc.getMaintnance(); 
 		}
 		else if(czn=='3')
 		{
-			System.out.println("3-selected insurnace  cost   ");
+			System.out.println("3-selected entering insurnace  cost   ");
 		justList.clear();
 		uc.setInsurance();
 		justList =  uc.getInsurance(); 
@@ -78,44 +78,44 @@ public class MainClass {
 		}
 		else if(czn=='4')
 		{
-			System.out.println("4-select sum avg from  fuel table,    "); 
+			/*System.out.println("4-select sum avg from  fuel table,    "); 
 			System.out.println("4-temporary trenig of sum, avg ,  from  1fuelcosttable  "); 
 			
 			
 			jdbc.setCarAvgSum(uc.getTableName('1', Integer.toString(ld.getYear())),uc.getTwoDates(0), uc.getTwoDates(1),1);
-			uc.setSumAvg(jdbc.getCarAvgSum());  
+			uc.setSumAvg(jdbc.getCarAvgSum()); */ 
 			
 			
 			
 		}
 		else if(czn=='5')
 		{
-			System.out.println("5-select ilosc litrow     "); 
+			/*System.out.println("5-select ilosc litrow     "); 
 			jdbc.setCarAvgSum(uc.getTableName('5', "null"),uc.getTwoDates(0), uc.getTwoDates(1),10);
-			uc.setSumAvg(jdbc.getCarAvgSum(),1);
+			uc.setSumAvg(jdbc.getCarAvgSum(),1);*/
 			
 		}
 		else if(czn=='6')
 		{
-			System.out.println("6-Selected sum of maintanance cost   ");
+			/*System.out.println("6-Selected sum of maintanance cost   ");
 		
 			jdbc.setCarAvgSum(23,uc.getTableName('2', Integer.toString(ld.getYear())) , uc.getTwoDates(0), uc.getTwoDates(1), 2);
-			uc.setSumAvg(jdbc.getCarAvgSum(23), 2, 23);
+			uc.setSumAvg(jdbc.getCarAvgSum(23), 2, 23);*/ 
 			
 		}
 		else if(czn=='7')
 		{
-			System.out.println("7-Selected sum of insurance  cost   ");
+			/*System.out.println("7-Selected sum of insurance  cost   ");
 			jdbc.setCarAvgSum(23,uc.getTableName('3', Integer.toString(ld.getYear())) , uc.getTwoDates(0), uc.getTwoDates(1), 3);
-			uc.setSumAvg(jdbc.getCarAvgSum(23), 3, 23);
+			uc.setSumAvg(jdbc.getCarAvgSum(23), 3, 23);*/
 		}
 		else if(czn== '8')
 		{
-			System.out.println("8-Selected sum of yera cost  for car eks  ");
+			/*System.out.println("8-Selected sum of yera cost  for car eks  ");
 			jdbc.setCarAvgSum(uc.getTableName('1', Integer.toString(ld.getYear())),uc.getTwoDates(0), uc.getTwoDates(1),1);
 			uc.setSumAvg(jdbc.getCarAvgSum());
 			jdbc.setCarAvgSum(23,uc.getTableName('2', Integer.toString(ld.getYear())) , uc.getTwoDates(0), uc.getTwoDates(1), 2);
-			uc.setSumAvg(jdbc.getCarAvgSum(23), 2, 23);
+			uc.setSumAvg(jdbc.getCarAvgSum(23), 2, 23);*/
 		}
 		else if(czn=='9')
 		{
